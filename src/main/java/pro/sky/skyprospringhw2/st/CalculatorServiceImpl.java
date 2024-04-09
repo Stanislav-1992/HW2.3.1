@@ -4,17 +4,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
+
     public String hello() {
-        return "Добро пожаловать в калькулятор54455 + 5 5 5";
+        return "Добро пожаловать в калькулятор!";
     }
 
-    @Override
-    public String plusNumber(Integer numOne, Integer numTwo) {
+    public String plus(int numOne, int numTwo) {
         return numOne + " + " + numTwo + " = " + (numOne + numTwo);
     }
 
-    /*public String answerHello(String userName) {
-        return "Hello " + userName;
-    }*/
+    public String minus (int numOne, int numTwo) {
+        return numOne + " - " + numTwo + " = " + (numOne - numTwo);
+    }
+
+    public String multiply (int numOne, int numTwo) {
+        return numOne + " * " + numTwo + " = " + (numOne * numTwo);
+    }
+
+    public String divide (Float numOne, Float numTwo) {
+        return numOne + " / " + numTwo + " = " + DemicalFormat.df.format(numOne / numTwo);
+    }
+
 
 }

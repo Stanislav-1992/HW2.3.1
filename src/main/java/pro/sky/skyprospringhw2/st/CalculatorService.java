@@ -1,10 +1,14 @@
 package pro.sky.skyprospringhw2.st;
 
 public interface CalculatorService {
+
     String hello();
 
-    String plusNumber(@RequestParam("num1") Integer numOne,
-                       @RequestParam("num2") Integer numTwo);
+    String plus (int numOne, int numTwo);
 
-    /*String answerHello(String userName);*/
+    String minus (int numOne, int numTwo);
+
+    String multiply (int numOne, int numTwo);
+
+    String divide (Float numOne, Float numTwo);
 }

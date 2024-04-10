@@ -1,5 +1,4 @@
 package pro.sky.skyprospringhw2.st;
-
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,20 +8,21 @@ public class CalculatorServiceImpl implements CalculatorService {
         return "Добро пожаловать в калькулятор!";
     }
 
-    public String plus(int numOne, int numTwo) {
-        return numOne + " + " + numTwo + " = " + (numOne + numTwo);
+    public int plus(int numOne, int numTwo) {
+        return numOne + numTwo;
     }
 
-    public String minus (int numOne, int numTwo) {
-        return numOne + " - " + numTwo + " = " + (numOne - numTwo);
+    public int minus (int numOne, int numTwo) {
+        return numOne - numTwo;
     }
 
-    public String multiply (int numOne, int numTwo) {
-        return numOne + " * " + numTwo + " = " + (numOne * numTwo);
+    public int multiply (int numOne, int numTwo) {
+        return numOne * numTwo;
     }
 
-    public String divide (Float numOne, Float numTwo) {
-        return numOne + " / " + numTwo + " = " + DemicalFormat.df.format(numOne / numTwo);
+    public float divide (int numOne, int numTwo) {
+        return (float) numOne / numTwo;
+        /*return numOne + " / " + numTwo + " = " + DemicalFormat.getDf().format(numOne / numTwo);*/
     }
 
 

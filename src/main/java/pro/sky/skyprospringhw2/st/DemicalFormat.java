@@ -1,19 +1,32 @@
 package pro.sky.skyprospringhw2.st;
+import org.springframework.stereotype.Component;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+@Component
 public class DemicalFormat {
 
-    public static DecimalFormat df = new DecimalFormat("#.##");
-    public static DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+    private static DecimalFormat df = new DecimalFormat("#.##");
+    private static DecimalFormatSymbols dfs = new DecimalFormatSymbols();
 
-    public static void setDfs(DecimalFormatSymbols dfs) {
+    private void setDfs(DecimalFormatSymbols dfs) {
         dfs.setDecimalSeparator('.');
     }
 
-    public static void setDf(DecimalFormat df) {
+    private void setDf(DecimalFormat df) {
         df.setDecimalFormatSymbols(dfs);
     }
 
+    private DemicalFormat() {
+        setDfs(DemicalFormat.dfs);
+        setDf(DemicalFormat.df);
+    }
 
+    public static DecimalFormat getDf() {
+        return df;
+    }
+
+    public static DecimalFormatSymbols getDfs() {
+        return dfs;
+    }
 }

@@ -8,9 +8,6 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		DemicalFormat.setDfs(DemicalFormat.dfs);
-		DemicalFormat.setDf(DemicalFormat.df);
-
 		SpringApplication.run(Application.class, args);
 	}
 

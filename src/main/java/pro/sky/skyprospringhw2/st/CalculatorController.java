@@ -23,40 +23,49 @@ public class CalculatorController {
     @GetMapping(path = "/plus")
     public String plus(@RequestParam(value = "num1", required = false) Integer numOne,
                        @RequestParam(value = "num2", required = false) Integer numTwo) {
-        if (numOne == null)
+        if (numOne == null) {
             return "Ошибка: отсутствует параметр №1";
-        if (numTwo == null)
+        }
+        if (numTwo == null) {
             return "Ошибка: отсутствует параметр №2";
-        return calculatorService.plus(numOne, numTwo);
+        }
+        return numOne + " + " + numTwo + " = " + calculatorService.plus(numOne, numTwo);
     }
     @GetMapping(path = "/minus")
     public String minus(@RequestParam(value = "num1", required = false) Integer numOne,
                         @RequestParam(value = "num2", required = false) Integer numTwo) {
-        if (numOne == null)
+        if (numOne == null) {
             return "Ошибка: отсутствует параметр №1";
-        if (numTwo == null)
+        }
+        if (numTwo == null) {
             return "Ошибка: отсутствует параметр №2";
-        return calculatorService.minus(numOne, numTwo);
+        }
+        return numOne + " - " + numTwo + " = " + calculatorService.minus(numOne, numTwo);
     }
     @GetMapping(path = "/multiply")
     public String multiply(@RequestParam(value = "num1", required = false) Integer numOne,
                            @RequestParam(value = "num2", required = false) Integer numTwo) {
-        if (numOne == null)
+        if (numOne == null) {
             return "Ошибка: отсутствует параметр №1";
-        if (numTwo == null)
+        }
+        if (numTwo == null) {
             return "Ошибка: отсутствует параметр №2";
-        return calculatorService.multiply(numOne, numTwo);
+        }
+        return numOne + " * " + numTwo + " = " + calculatorService.multiply(numOne, numTwo);
     }
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam(value = "num1", required = false) Float numOne,
-                           @RequestParam(value = "num2", required = false) Float numTwo) {
-        if (numOne == null)
+    public String divide(@RequestParam(value = "num1", required = false) Integer numOne,
+                           @RequestParam(value = "num2", required = false) Integer numTwo) {
+        if (numOne == null) {
             return "Ошибка: отсутствует параметр №1";
-        if (numTwo == null)
+        }
+        if (numTwo == null) {
             return "Ошибка: отсутствует параметр №2";
-        if (numTwo == 0)
+        }
+        if (numTwo == 0) {
             return "Ошибка: на 0 делить нельзя!!!";
-        return calculatorService.divide(numOne, numTwo);
+        }
+        return String.format(numOne + " / " + numTwo + " = " + DemicalFormat.getDf().format(calculatorService.divide(numOne, numTwo)));
     }
 
 }

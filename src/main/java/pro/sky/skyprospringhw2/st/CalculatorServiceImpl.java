@@ -1,20 +1,35 @@
 package pro.sky.skyprospringhw2.st;
-
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
+
     public String hello() {
-        return "Добро пожаловать в калькулятор54455 + 5 5 5";
+        return "Добро пожаловать в калькулятор!";
     }
 
-    @Override
-    public String plusNumber(Integer numOne, Integer numTwo) {
-        return numOne + " + " + numTwo + " = " + (numOne + numTwo);
+    public int plus(int numOne, int numTwo) {
+        return numOne + numTwo;
     }
 
-    /*public String answerHello(String userName) {
-        return "Hello " + userName;
-    }*/
+    public int minus (int numOne, int numTwo) {
+        return numOne - numTwo;
+    }
 
+    public int multiply (int numOne, int numTwo) {
+        return numOne * numTwo;
+    }
+
+    public float divide (Integer numOne, Integer numTwo) {
+        if (numOne == null) {
+            throw new NumberFormatException("Ошибка: отсутствует параметр №1");
+        }
+        if (numTwo == null) {
+            throw new NumberFormatException("Ошибка: отсутствует параметр №2");
+        }
+        if (numTwo == 0) {
+            throw new DivisionByZeroException("Деление на ноль запрещено!");
+        }
+        return (float) numOne / numTwo;
+    }
 }

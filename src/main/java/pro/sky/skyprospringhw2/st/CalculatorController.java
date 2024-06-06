@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/calculator")
 public class CalculatorController {
     private final CalculatorService calculatorService;
-    private final DemicalFormat demicalFormat;
+    private final DecimalFormatWrapper demicalFormat;
 
 
-    public CalculatorController(CalculatorService calculatorService, DemicalFormat demicalFormat) {
+    public CalculatorController(CalculatorService calculatorService, DecimalFormatWrapper demicalFormat) {
         this.calculatorService = calculatorService;
         this.demicalFormat = demicalFormat;
     }

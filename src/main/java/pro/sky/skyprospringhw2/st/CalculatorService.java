@@ -10,5 +10,5 @@ public interface CalculatorService {
 
     int multiply (int numOne, int numTwo);
 
-    float divide (int numOne, int numTwo);
+    float divide(Integer numOne, Integer numTwo);
 }

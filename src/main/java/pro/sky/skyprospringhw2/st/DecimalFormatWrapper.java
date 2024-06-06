@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 @Component
-public class DemicalFormat {
+public class DecimalFormatWrapper {
     private static DecimalFormat df = new DecimalFormat("#.##");
     private static DecimalFormatSymbols dfs = new DecimalFormatSymbols();
     private void setDfs(DecimalFormatSymbols dfs) {
@@ -14,9 +14,9 @@ public class DemicalFormat {
     private void setDf(DecimalFormat df) {
         df.setDecimalFormatSymbols(dfs);
     }
-    private DemicalFormat() {
-        setDfs(DemicalFormat.dfs);
-        setDf(DemicalFormat.df);
+    private DecimalFormatWrapper() {
+        setDfs(DecimalFormatWrapper.dfs);
+        setDf(DecimalFormatWrapper.df);
     }
 
     public DecimalFormat getDf() {

@@ -1,11 +1,6 @@
 package pro.sky.skyprospringhw2.st;
 
-/*import com.calculator.Exceptions.DivisionByZeroException;
-import com.calculator.calculator.CalculatorServiceImpl;*/
 import org.junit.jupiter.api.Test;
-
-import java.security.DigestException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorServiceTest {
@@ -55,7 +50,7 @@ public class CalculatorServiceTest {
     }
     @Test
     void dividePositive() {
-        assertEquals(0,calculatorService.divide(3,4));
+        assertEquals(0.75,calculatorService.divide(3,4));
     }
 
     @Test

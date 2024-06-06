@@ -21,8 +21,8 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     public float divide (int numOne, int numTwo) {
-        if (numTwo==0) {
-            throw new DivisionByZeroException();
+        if (numTwo == 0) {
+            throw new DivisionByZeroException("Деление на ноль запрещено!");
         }
         return (float) numOne / numTwo;
     }

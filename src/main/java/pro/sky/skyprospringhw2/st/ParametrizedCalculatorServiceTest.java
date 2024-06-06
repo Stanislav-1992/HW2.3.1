@@ -3,9 +3,7 @@ package pro.sky.skyprospringhw2.st;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParametrizedCalculatorServiceTest {
@@ -23,30 +21,30 @@ public class ParametrizedCalculatorServiceTest {
     }
     @ParameterizedTest
     @MethodSource("data")
-    void add(int num1, int num2){
-        int excepted =num1 + num2;
-        int actual = calculatorService.plus(num1, num2);
+    void add(int numOne, int numTwo){
+        int excepted = numOne + numTwo;
+        int actual = calculatorService.plus(numOne, numTwo);
         assertEquals(excepted, actual);
     }
     @ParameterizedTest
     @MethodSource("data")
-    void minus(int num1, int num2){
-        int excepted =num1 - num2;
-        int actual = calculatorService.minus(num1, num2);
+    void minus(int numOne, int numTwo){
+        int excepted = numOne - numTwo;
+        int actual = calculatorService.minus(numOne, numTwo);
         assertEquals(excepted, actual);
     }
     @ParameterizedTest
     @MethodSource("data")
-    void multiply(int num1, int num2){
-        int excepted =num1 * num2;
-        int actual = calculatorService.multiply(num1, num2);
+    void multiply(int numOne, int numTwo){
+        int excepted = numOne * numTwo;
+        int actual = calculatorService.multiply(numOne, numTwo);
         assertEquals(excepted, actual);
     }
     @ParameterizedTest
     @MethodSource("data")
-    void divide(int num1, int num2){
-        int excepted =num1 / num2;
-        float actual = calculatorService.divide(num1, num2);
+    void divide(int numOne, int numTwo){
+        int excepted = numOne / numTwo;
+        float actual = calculatorService.divide(numOne, numTwo);
         assertEquals(excepted, actual);
     }
 }

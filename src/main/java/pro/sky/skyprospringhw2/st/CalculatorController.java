@@ -9,9 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/calculator")
 public class CalculatorController {
     private final CalculatorService calculatorService;
+    private final DemicalFormat demicalFormat;
 
-    public CalculatorController(CalculatorService calculatorService) {
+    /*public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
+    }*/
+
+    /*private final DemicalFormat demicalFormat;*/
+
+    public CalculatorController(CalculatorService calculatorService, DemicalFormat demicalFormat) {
+        this.calculatorService = calculatorService;
+        this.demicalFormat = demicalFormat;
     }
 
     @GetMapping()
@@ -65,7 +73,11 @@ public class CalculatorController {
         if (numTwo == 0) {
             return "Ошибка: на 0 делить нельзя!!!";
         }
-        return String.format(numOne + " / " + numTwo + " = " + DemicalFormat.getDf().format(calculatorService.divide(numOne, numTwo)));
+        return String.format(numOne + " / " + numTwo + " = " + demicalFormat.getDf().format(calculatorService.divide(numOne, numTwo)))
+
+
+
+                /*DemicalFormat.getDf().format(calculatorService.divide(numOne, numTwo)))*/;
     }
 
 }

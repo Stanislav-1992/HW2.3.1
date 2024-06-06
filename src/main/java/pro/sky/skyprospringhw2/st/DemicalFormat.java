@@ -22,11 +22,11 @@ public class DemicalFormat {
         setDf(DemicalFormat.df);
     }
 
-    public static DecimalFormat getDf() {
+    public DecimalFormat getDf() {
         return df;
     }
 
-    public static DecimalFormatSymbols getDfs() {
+    public  DecimalFormatSymbols getDfs() {
         return dfs;
     }
 }

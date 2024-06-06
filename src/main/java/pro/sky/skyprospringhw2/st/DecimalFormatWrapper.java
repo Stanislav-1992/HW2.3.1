@@ -8,6 +8,7 @@ import java.text.DecimalFormatSymbols;
 public class DecimalFormatWrapper {
     private static DecimalFormat df = new DecimalFormat("#.##");
     private static DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+
     private void setDfs(DecimalFormatSymbols dfs) {
         dfs.setDecimalSeparator('.');
     }
@@ -21,9 +22,5 @@ public class DecimalFormatWrapper {
 
     public DecimalFormat getDf() {
         return df;
-    }
-
-    public  DecimalFormatSymbols getDfs() {
-        return dfs;
     }
 }

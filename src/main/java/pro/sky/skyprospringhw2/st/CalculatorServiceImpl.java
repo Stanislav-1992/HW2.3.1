@@ -22,10 +22,10 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     public float divide (Integer numOne, Integer numTwo) {
         if (numOne == null) {
-            return Float.parseFloat("Ошибка: отсутствует параметр №1");
+            throw new NumberFormatException("Ошибка: отсутствует параметр №1");
         }
         if (numTwo == null) {
-            return Float.parseFloat("Ошибка: отсутствует параметр №2");
+            throw new NumberFormatException("Ошибка: отсутствует параметр №2");
         }
         if (numTwo == 0) {
             throw new DivisionByZeroException("Деление на ноль запрещено!");

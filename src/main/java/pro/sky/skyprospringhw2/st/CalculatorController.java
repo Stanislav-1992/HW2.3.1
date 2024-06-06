@@ -59,7 +59,7 @@ public class CalculatorController {
     }
     @GetMapping(path = "/divide")
     public String divide(@RequestParam(value = "num1", required = false) Integer numOne,
-                           @RequestParam(value = "num2", required = false) Integer numTwo) {
+                         @RequestParam(value = "num2", required = false) Integer numTwo) {
         if (numOne == null) {
             return "Ошибка: отсутствует параметр №1";
         }
